@@ -1,0 +1,30 @@
+.calculator-container {
+  max-width: 500px;
+}
+
+.calculator-display {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid azure;
+  height: 30px;
+}
+
+.calculator-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-btns button {
+  width: 30%;
+}
+
+.calculator-btns button#clear {
+  width: 60%;
+}
