@@ -43,41 +43,92 @@ function App() {
 
   return (
     <main className="calculator-container">
+      <h2 className="calculator-title">Calculator</h2>
       <div className="calculator-display">
         <div id="display">{result}</div>
       </div>
       <div className="calculator-btns">
-        <button id="one" value="1" onClick={onsetCurrentValue}>
+        <button
+          id="one"
+          className="calculator-btnNumeric"
+          value="1"
+          onClick={onsetCurrentValue}
+        >
           1
         </button>
-        <button id="two" value="2" onClick={onsetCurrentValue}>
+        <button
+          id="two"
+          className="calculator-btnNumeric"
+          value="2"
+          onClick={onsetCurrentValue}
+        >
           2
         </button>
-        <button id="three" value="3" onClick={onsetCurrentValue}>
+        <button
+          id="three"
+          className="calculator-btnNumeric"
+          value="3"
+          onClick={onsetCurrentValue}
+        >
           3
         </button>
-        <button id="four" value="4" onClick={onsetCurrentValue}>
+        <button
+          id="four"
+          className="calculator-btnNumeric"
+          value="4"
+          onClick={onsetCurrentValue}
+        >
           4
         </button>
-        <button id="five" value="5" onClick={onsetCurrentValue}>
+        <button
+          id="five"
+          className="calculator-btnNumeric"
+          value="5"
+          onClick={onsetCurrentValue}
+        >
           5
         </button>
-        <button id="six" value="6" onClick={onsetCurrentValue}>
+        <button
+          id="six"
+          className="calculator-btnNumeric"
+          value="6"
+          onClick={onsetCurrentValue}
+        >
           6
         </button>
-        <button id="seven" value="7" onClick={onsetCurrentValue}>
+        <button
+          id="seven"
+          className="calculator-btnNumeric"
+          value="7"
+          onClick={onsetCurrentValue}
+        >
           7
         </button>
-        <button id="eight" value="8" onClick={onsetCurrentValue}>
+        <button
+          id="eight"
+          className="calculator-btnNumeric"
+          value="8"
+          onClick={onsetCurrentValue}
+        >
           8
         </button>
-        <button id="nine" value="9" onClick={onsetCurrentValue}>
+        <button
+          id="nine"
+          className="calculator-btnNumeric"
+          value="9"
+          onClick={onsetCurrentValue}
+        >
           9
         </button>
         <button id="decimal" value="." onClick={onAddOperation}>
           .
         </button>
-        <button id="zero" value="0" onClick={onsetCurrentValue}>
+        <button
+          id="zero"
+          className="calculator-btnNumeric"
+          value="0"
+          onClick={onsetCurrentValue}
+        >
           0
         </button>
         <button id="divide" value="/" onClick={onAddOperation}>
