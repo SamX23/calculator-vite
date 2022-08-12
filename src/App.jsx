@@ -2,50 +2,69 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [result, setResult] = useState(0);
   const [currentValue, setCurrentValue] = useState([]);
-  const [operation, setOperation] = useState([]);
+  const [currentResult, setCurrentResult] = useState(0);
 
   const replaceComma = (str) => str.replaceAll(",", "");
 
   const onClearHandle = () => {
-    setResult(0);
     setCurrentValue([]);
-    setOperation([]);
+    setCurrentResult(0);
   };
 
   const onsetCurrentValue = (e) => {
-    const number = e.target.value;
-    setCurrentValue([...currentValue, number]);
-    setResult(replaceComma(currentValue.join()));
-  };
+    const currentInput = e.target.value;
+    const operatorAttribute = e.target.dataset.attr;
+    const ifValueEmpty = currentValue.length == 0;
+    const ifCurrentInputIsNotZero = currentInput != 0;
 
-  const onAddOperation = (e) => {
-    const operator = e.target.value;
-    const number = replaceComma(currentValue.join());
-
-    setOperation([...operation, `${number}${operator}`]);
-    setCurrentValue([]);
+    if (currentResult == 0) {
+      if (ifValueEmpty) {
+        if (ifCurrentInputIsNotZero) {
+          if (operatorAttribute == undefined) {
+            setCurrentValue([...currentValue, currentInput]);
+          }
+        }
+      } else {
+        setCurrentValue([...currentValue, currentInput]);
+      }
+    } else {
+      if (operatorAttribute) {
+        setCurrentValue([...currentValue, currentResult, currentInput]);
+      } else {
+        setCurrentResult(0);
+        setCurrentValue([...currentValue, currentInput]);
+      }
+    }
   };
 
   const onSubmit = () => {
-    let stringNumber = operation.join();
-    const lastIndex = stringNumber[stringNumber.length - 1];
+    let previousValue = null;
+    let newArr = [];
+    currentValue.forEach((value) => {
+      if (value != previousValue) {
+        newArr.push(value);
+        previousValue = value;
+      }
+    });
 
-    stringNumber =
-      lastIndex != Number ? stringNumber.slice(0, -1) : stringNumber;
+    const joinedValue = newArr.join();
+    const formattedNumber = replaceComma(joinedValue);
+    const result = eval(formattedNumber);
 
-    const result = replaceComma(stringNumber);
-
-    setResult(eval(result));
-    setOperation([]);
+    setCurrentValue([]);
+    setCurrentResult(result);
   };
 
   return (
     <main className="calculator-container">
       <h2 className="calculator-title">Calculator</h2>
       <div className="calculator-display">
-        <div id="display">{result}</div>
+        <div id="display">
+          {currentValue.length == 0
+            ? currentResult
+            : replaceComma(currentValue.join())}
+        </div>
       </div>
       <div className="calculator-btns">
         <button
@@ -120,7 +139,7 @@ function App() {
         >
           9
         </button>
-        <button id="decimal" value="." onClick={onAddOperation}>
+        <button id="decimal" value="." onClick={onsetCurrentValue}>
           .
         </button>
         <button
@@ -131,17 +150,37 @@ function App() {
         >
           0
         </button>
-        <button id="divide" value="/" onClick={onAddOperation}>
+        <button
+          id="divide"
+          value="/"
+          data-attr="operator"
+          onClick={onsetCurrentValue}
+        >
           /
         </button>
 
-        <button id="add" value="+" onClick={onAddOperation}>
+        <button
+          id="add"
+          value="+"
+          data-attr="operator"
+          onClick={onsetCurrentValue}
+        >
           +
         </button>
-        <button id="subtract" value="-" onClick={onAddOperation}>
+        <button
+          id="subtract"
+          value="-"
+          data-attr="operator"
+          onClick={onsetCurrentValue}
+        >
           -
         </button>
-        <button id="multiply" value="*" onClick={onAddOperation}>
+        <button
+          id="multiply"
+          value="*"
+          data-attr="operator"
+          onClick={onsetCurrentValue}
+        >
           *
         </button>
         <button id="equals" value="=" onClick={onSubmit}>
