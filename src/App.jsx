@@ -58,137 +58,158 @@ function App() {
 
   return (
     <main className="calculator-container">
-      <h2 className="calculator-title">Calculator</h2>
-      <div className="calculator-display">
-        <div id="display">
-          {currentValue.length == 0
-            ? currentResult
-            : replaceComma(currentValue.join())}
+      <div className="calculator-header">
+        <h2 className="calculator-title">Calculator</h2>
+        <div className="calculator-display">
+          <span className="calculator-calculation">
+            {currentResult != 0 && currentResult}
+          </span>
+          <div id="display">
+            {currentValue.length == 0
+              ? currentResult
+              : replaceComma(currentValue.join())}
+          </div>
         </div>
       </div>
-      <div className="calculator-btns">
-        <button
-          id="one"
-          className="calculator-btnNumeric"
-          value="1"
-          onClick={onsetCurrentValue}
-        >
-          1
-        </button>
-        <button
-          id="two"
-          className="calculator-btnNumeric"
-          value="2"
-          onClick={onsetCurrentValue}
-        >
-          2
-        </button>
-        <button
-          id="three"
-          className="calculator-btnNumeric"
-          value="3"
-          onClick={onsetCurrentValue}
-        >
-          3
-        </button>
-        <button
-          id="four"
-          className="calculator-btnNumeric"
-          value="4"
-          onClick={onsetCurrentValue}
-        >
-          4
-        </button>
-        <button
-          id="five"
-          className="calculator-btnNumeric"
-          value="5"
-          onClick={onsetCurrentValue}
-        >
-          5
-        </button>
-        <button
-          id="six"
-          className="calculator-btnNumeric"
-          value="6"
-          onClick={onsetCurrentValue}
-        >
-          6
-        </button>
-        <button
-          id="seven"
-          className="calculator-btnNumeric"
-          value="7"
-          onClick={onsetCurrentValue}
-        >
-          7
-        </button>
-        <button
-          id="eight"
-          className="calculator-btnNumeric"
-          value="8"
-          onClick={onsetCurrentValue}
-        >
-          8
-        </button>
-        <button
-          id="nine"
-          className="calculator-btnNumeric"
-          value="9"
-          onClick={onsetCurrentValue}
-        >
-          9
-        </button>
-        <button id="decimal" value="." onClick={onsetCurrentValue}>
-          .
-        </button>
-        <button
-          id="zero"
-          className="calculator-btnNumeric"
-          value="0"
-          onClick={onsetCurrentValue}
-        >
-          0
-        </button>
-        <button
-          id="divide"
-          value="/"
-          data-attr="operator"
-          onClick={onsetCurrentValue}
-        >
-          /
-        </button>
 
-        <button
-          id="add"
-          value="+"
-          data-attr="operator"
-          onClick={onsetCurrentValue}
-        >
-          +
-        </button>
-        <button
-          id="subtract"
-          value="-"
-          data-attr="operator"
-          onClick={onsetCurrentValue}
-        >
-          -
-        </button>
-        <button
-          id="multiply"
-          value="*"
-          data-attr="operator"
-          onClick={onsetCurrentValue}
-        >
-          *
-        </button>
-        <button id="equals" value="=" onClick={onSubmit}>
-          =
-        </button>
-        <button id="clear" onClick={onClearHandle}>
-          CLR
-        </button>
+      <div className="calculator-body">
+        <div className="calculator-btns">
+          <button
+            id="one"
+            className="calculator-btnNumeric"
+            value="1"
+            onClick={onsetCurrentValue}
+          >
+            1
+          </button>
+          <button
+            id="two"
+            className="calculator-btnNumeric"
+            value="2"
+            onClick={onsetCurrentValue}
+          >
+            2
+          </button>
+          <button
+            id="three"
+            className="calculator-btnNumeric"
+            value="3"
+            onClick={onsetCurrentValue}
+          >
+            3
+          </button>
+          <button
+            id="four"
+            className="calculator-btnNumeric"
+            value="4"
+            onClick={onsetCurrentValue}
+          >
+            4
+          </button>
+          <button
+            id="five"
+            className="calculator-btnNumeric"
+            value="5"
+            onClick={onsetCurrentValue}
+          >
+            5
+          </button>
+          <button
+            id="six"
+            className="calculator-btnNumeric"
+            value="6"
+            onClick={onsetCurrentValue}
+          >
+            6
+          </button>
+          <button
+            id="seven"
+            className="calculator-btnNumeric"
+            value="7"
+            onClick={onsetCurrentValue}
+          >
+            7
+          </button>
+          <button
+            id="eight"
+            className="calculator-btnNumeric"
+            value="8"
+            onClick={onsetCurrentValue}
+          >
+            8
+          </button>
+          <button
+            id="nine"
+            className="calculator-btnNumeric"
+            value="9"
+            onClick={onsetCurrentValue}
+          >
+            9
+          </button>
+          <button id="decimal" value="." onClick={onsetCurrentValue}>
+            .
+          </button>
+          <button
+            id="zero"
+            className="calculator-btnNumeric"
+            value="0"
+            onClick={onsetCurrentValue}
+          >
+            0
+          </button>
+          <button
+            id="divide"
+            value="/"
+            className="calculator-btnOperator"
+            data-attr="operator"
+            onClick={onsetCurrentValue}
+          >
+            /
+          </button>
+
+          <button
+            id="add"
+            value="+"
+            className="calculator-btnOperator"
+            data-attr="operator"
+            onClick={onsetCurrentValue}
+          >
+            +
+          </button>
+          <button
+            id="subtract"
+            value="-"
+            className="calculator-btnOperator"
+            data-attr="operator"
+            onClick={onsetCurrentValue}
+          >
+            -
+          </button>
+          <button
+            id="multiply"
+            value="*"
+            className="calculator-btnOperator"
+            data-attr="operator"
+            onClick={onsetCurrentValue}
+          >
+            *
+          </button>
+          <button
+            id="equals"
+            value="="
+            className="calculator-btnOperator"
+            onClick={onSubmit}
+          >
+            =
+          </button>
+          <button
+            id="clear"
+            className="calculator-btnOperatorOption"
+            onClick={onClearHandle}
+          >
+            AC
+          </button>
+        </div>
       </div>
     </main>
   );
