@@ -26,7 +26,7 @@ DONE - User Story #12: I should be able to perform any operation (+, -, \*, /) o
 
 User Story #13: If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (-) sign). For example, if 5 + _ 7 = is entered, the result should be 35 (i.e. 5 _ 7); if 5 _ - 5 = is entered, the result should be -25 (i.e. 5 _ (-5)).
 
-User Story #14: Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
+DONE - User Story #14: Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
 
 DONE - User Story #15: My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal places).
 
