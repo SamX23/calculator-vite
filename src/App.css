@@ -64,18 +64,14 @@
 
 .calculator-btns {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0.25rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
   margin: 0 0.5rem;
 }
 
 .calculator-btns button {
-  background-color: #272b33;
+  background-color: #212835;
   font-weight: 600;
-}
-
-.calculator-btnNumeric {
-  background-color: skyblue;
 }
 
 .calculator-btnOperatorOption {
@@ -84,4 +80,12 @@
 
 .calculator-btnOperator {
   color: #f47a7a;
+}
+
+#zero {
+  grid-column: span 3;
+}
+
+#equals {
+  grid-column: span 2;
 }
