@@ -24,7 +24,7 @@ User Story #11: When the decimal element is clicked, a . should append to the cu
 
 DONE - User Story #12: I should be able to perform any operation (+, -, \*, /) on numbers containing decimal points.
 
-User Story #13: If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (-) sign). For example, if 5 + _ 7 = is entered, the result should be 35 (i.e. 5 _ 7); if 5 _ - 5 = is entered, the result should be -25 (i.e. 5 _ (-5)).
+DONE - User Story #13: If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (-) sign). For example, if 5 + _ 7 = is entered, the result should be 35 (i.e. 5 _ 7); if 5 _ - 5 = is entered, the result should be -25 (i.e. 5 _ (-5)).
 
 DONE - User Story #14: Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
 
